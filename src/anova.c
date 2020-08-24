@@ -98,7 +98,7 @@ void anova(int n, double *y[], double *x, int nclass,
 		left_n = 0;
 		right_sum = 0; /* after subracting grand mean, it's zero */
 		best = 0;
-		for (i = 0; right_n > edge; i++)
+		for (i = 0; right_wt > (double) edge; i++)
 		{
 			left_wt += wt[i];
 			right_wt -= wt[i];
@@ -107,7 +107,7 @@ void anova(int n, double *y[], double *x, int nclass,
 			temp = (*y[i] - grandmean) * wt[i];
 			left_sum += temp;
 			right_sum -= temp;
-			if (x[i + 1] != x[i] && left_n >= edge)
+			if (x[i + 1] != x[i] && left_wt >= (double) edge)
 			{
 				temp = left_sum * left_sum / left_wt +
 					   right_sum * right_sum / right_wt;
@@ -180,7 +180,7 @@ void anova(int n, double *y[], double *x, int nclass,
 			right_wt -= wts[j];
 			left_sum += sums[j];
 			right_sum -= sums[j];
-			if (left_n >= edge && right_n >= edge)
+			if (left_wt >= (double) edge && right_wt >= (double) edge)
 			{
 				temp = left_sum * left_sum / left_wt +
 					   right_sum * right_sum / right_wt;

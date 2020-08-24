@@ -55,8 +55,7 @@ int partition(int nodenum, pNode splitnode, double *sumrisk, int n1, int n2)
 	/*
      * Can I quit now ?
      */
-	if (me->num_obs < rp.min_split || tempcp <= rp.alpha ||
-		nodenum > rp.maxnode)
+	if (me->sum_wt < (double) rp.min_split || tempcp <= rp.alpha || nodenum > rp.maxnode)
 	{
 		me->complexity = rp.alpha;
 		*sumrisk = me->risk;
