@@ -1,4 +1,4 @@
-Package: rpart
+Package: rpartwt
 Priority: recommended
 Version: 4.1-16
 Date: 2019-05-21
@@ -9,8 +9,8 @@ Authors@R: c(person("Terry", "Therneau", role = "aut",
              person("Brian", "Ripley", role = "trl",
                     email = "ripley@stats.ox.ac.uk",
 		    comment = "producer of the initial R port, maintainer 1999-2017"))
-Description: Recursive partitioning for classification, 
-  regression and survival trees.  An implementation of most of the 
+Description: Recursive partitioning for classification,
+  regression and survival trees.  An implementation of most of the
   functionality of the 1984 book by Breiman, Friedman, Olshen and Stone.
 Title: Recursive Partitioning and Regression Trees
 Depends: R (>= 2.15.0), graphics, stats, grDevices
