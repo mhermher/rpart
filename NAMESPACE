@@ -1,7 +1,7 @@
 useDynLib(rpartwt, .registration = TRUE, .fixes = "C_")
 
-export(meanvar, na.rpart, path.rpart, plotcp, post, printcp, prune,
-       prune.rpart, rpart, rpart.control, rsq.rpart, snip.rpart, xpred.rpart)
+export(meanvar, na.rpartwt, path.rpartwt, plotcp, post, printcp, prune,
+       prune.rpartwt, rpart, rpart.control, rsq.rpartwt, snip.rpartwt, xpred.rpartwt)
 export(rpart.exp)  # needed for one of the tests
 
 importFrom(grDevices, col2rgb, dev.cur, dev.off, postscript)
@@ -9,15 +9,15 @@ importFrom(graphics, abline, axis, box, identify, legend, lines, mtext,
            par, plot, polygon, segments, text, title)
 import(stats)
 
-S3method(labels, rpart)
-S3method(meanvar, rpart)
-S3method(model.frame, rpart)
-S3method(plot, rpart)
-S3method(post, rpart)
-S3method(predict, rpart)
-S3method(print, rpart)
-S3method(prune, rpart)
-S3method(residuals, rpart)
-S3method(summary, rpart)
-S3method(text, rpart)
+S3method(labels, rpartwt)
+S3method(meanvar, rpartwt)
+S3method(model.frame, rpartwt)
+S3method(plot, rpartwt)
+S3method(post, rpartwt)
+S3method(predict, rpartwt)
+S3method(print, rpartwt)
+S3method(prune, rpartwt)
+S3method(residuals, rpartwt)
+S3method(summary, rpartwt)
+S3method(text, rpartwt)
 
