@@ -31,7 +31,7 @@ xpred.rpartwt <- function(fit, xval = 10L, cp, return.all = FALSE)
 	    Y <- model.extract(m, "response")
             offset <- attr(Terms, "offset")
 	    if (method != "user") {
-		init <- get(paste("rpartwt", method, sep = "."))(Y, offset, NULL)
+		init <- get(paste("rpart", method, sep = "."))(Y, offset, NULL)
 		Y <- init$y
 		numy <- if (is.matrix(Y)) ncol(Y) else 1L
             }

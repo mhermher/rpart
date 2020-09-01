@@ -79,12 +79,12 @@ rpart <-
 	    init <- (
             if (missing(parms))
                 get(
-                    paste("rpartwt", method, sep = "."),
+                    paste("rpart", method, sep = "."),
                     envir = environment()
                 )(Y, offset, , wt)
             else
                 get(
-                    paste("rpartwt", method, sep = "."),
+                    paste("rpart", method, sep = "."),
                     envir = environment()
                 )(Y, offset, parms, wt)
         )
