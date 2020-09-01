@@ -4,7 +4,7 @@ plotcp <- function(x, minline = TRUE, lty = 3, col = 1,
 		   upper = c("size", "splits", "none"), ...)
 {
     dots <- list(...)
-    if (!inherits(x, "rpart")) stop("Not a legitimate \"rpart\" object")
+    if (!inherits(x, "rpartwt")) stop("Not a legitimate \"rpartwt\" object")
     upper <- match.arg(upper)
     p.rpart <- x$cptable
     if (ncol(p.rpart) < 5L)

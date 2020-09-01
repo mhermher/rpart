@@ -1,8 +1,8 @@
-meanvar.rpart <- function(tree, xlab = "ave(y)", ylab = "ave(deviance)", ...)
+meanvar.rpartwt <- function(tree, xlab = "ave(y)", ylab = "ave(deviance)", ...)
 
 {
-    if (!inherits(tree, "rpart"))
-        stop("Not a legitimate \"rpart\" object")
+    if (!inherits(tree, "rpartwt"))
+        stop("Not a legitimate \"rpartwt\" object")
     if (!tree$method == "anova")
         stop("Plot not useful for classification or poisson trees")
     frame <- tree$frame

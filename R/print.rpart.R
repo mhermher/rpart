@@ -1,9 +1,9 @@
-print.rpart <- function(x, minlength = 0L, spaces = 2L, cp,
+print.rpartwt <- function(x, minlength = 0L, spaces = 2L, cp,
                digits = getOption("digits"), nsmall = min(20, digits), ...)
 {
-    if (!inherits(x, "rpart")) stop("Not a legitimate \"rpart\" object")
+    if (!inherits(x, "rpartwt")) stop("Not a legitimate \"rpartwt\" object")
 
-    if (!missing(cp)) x <- prune.rpart(x, cp = cp)
+    if (!missing(cp)) x <- prune.rpartwt(x, cp = cp)
     frame <- x$frame
     ylevel <- attr(x, "ylevels")
     node <- as.numeric(row.names(frame))

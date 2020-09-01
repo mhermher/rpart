@@ -1,5 +1,5 @@
 ##
-post.rpart <- function(tree, title.,
+post.rpartwt <- function(tree, title.,
 		       filename = paste(deparse(substitute(tree)), ".ps", sep = ""),
 		       digits = getOption("digits") - 2, pretty = TRUE,
 		       use.n = TRUE, horizontal = TRUE, ...)

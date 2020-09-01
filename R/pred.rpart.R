@@ -1,6 +1,6 @@
 ##
 ## Do Rpart predictions given a tree and a matrix of predictors
-pred.rpart <- function(fit, x)
+pred.rpartwt <- function(fit, x)
 {
     frame <- fit$frame
     if (nrow(frame) == 1L)                # root only tree

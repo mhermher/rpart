@@ -13,7 +13,7 @@
 ##               TRUE   -> minlength = 4
 ##   ... = other args for abbreviate()
 ##
-labels.rpart <- function(object, digits = 4, minlength = 1L, pretty,
+labels.rpartwt <- function(object, digits = 4, minlength = 1L, pretty,
                          collapse = TRUE, ...)
 {
     if (missing(minlength) && !missing(pretty)) {

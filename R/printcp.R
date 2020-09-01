@@ -1,7 +1,7 @@
 ## print out the cptable, along with some summary of the tree
 printcp <- function(x, digits = getOption("digits") - 2L)
 {
-    if (!inherits(x, "rpart")) stop ("'x' must be an \"rpart\" object")
+    if (!inherits(x, "rpartwt")) stop ("'x' must be an \"rpartwt\" object")
     cat(switch(x$method,
                anova = "\nRegression tree:\n" ,
                class = "\nClassification tree:\n" ,

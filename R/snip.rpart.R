@@ -1,9 +1,9 @@
 ##
 ##  This routine "throws away" branches
 ##
-snip.rpart <- function(x, toss)
+snip.rpartwt <- function(x, toss)
 {
-    if (!inherits(x, "rpart")) stop("Not an \"rpart\" object")
+    if (!inherits(x, "rpartwt")) stop("Not an \"rpartwt\" object")
 
     if (missing(toss) || length(toss) == 0L) {
         toss <- snip.rpart.mouse(x)

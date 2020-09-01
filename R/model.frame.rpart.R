@@ -1,4 +1,4 @@
-model.frame.rpart <- function(formula, ...)
+model.frame.rpartwt <- function(formula, ...)
 {
     m <- formula$model
     if (!is.null(m)) return(m)
@@ -7,7 +7,7 @@ model.frame.rpart <- function(formula, ...)
         m <- eval(oc$newdata)
         if (is.null(attr(m, "terms"))) {
             object <- eval(oc$object)
-            m <- model.frame(object$terms, m, na.rpart)
+            m <- model.frame(object$terms, m, na.rpartwt)
         }
         return(m)
     }

@@ -1,8 +1,8 @@
-predict.rpart <- function(object, newdata,
+predict.rpartwt <- function(object, newdata,
 	 type = c("vector", "prob", "class", "matrix"),
          na.action = na.pass, ...)
 {
-    if (!inherits(object, "rpart")) stop("Not a legitimate \"rpart\" object")
+    if (!inherits(object, "rpartwt")) stop("Not a legitimate \"rpartwt\" object")
 
     mtype <- missing(type)
     type <- match.arg(type)
@@ -15,7 +15,7 @@ predict.rpart <- function(object, newdata,
             if (!is.null(cl <- attr(Terms, "dataClasses")))
                 .checkMFClasses(cl, newdata, TRUE)
         }
-	pred.rpart(object, rpart.matrix(newdata))
+	pred.rpartwt(object, rpart.matrix(newdata))
     }
     frame <- object$frame
     ylevels <- attr(object, "ylevels")
@@ -35,7 +35,7 @@ predict.rpart <- function(object, newdata,
     } else if (type == "prob" && nclass > 0L) {
 	pred <- frame$yval2[where, 1L + nclass + 1L:nclass, drop = FALSE]
 	dimnames(pred) <- list(names(where), ylevels)
-    } else stop("Invalid prediction for \"rpart\" object")
+    } else stop("Invalid prediction for \"rpartwt\" object")
 
     # Expand out the missing values in the result
     # But only if operating on the original dataset

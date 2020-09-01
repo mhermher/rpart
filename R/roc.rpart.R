@@ -1,7 +1,7 @@
-roc.rpart <- function(object, plot.ok = TRUE, x.orient = 1L)
+roc.rpartwt <- function(object, plot.ok = TRUE, x.orient = 1L)
 {
 
-    if (!inherits(object, "rpart") || object$method != "class" ||
+    if (!inherits(object, "rpartwt") || object$method != "class" ||
        length(attr(object, "ylevels")) != 2L)
         stop('Not legitimate \"rpart\" tree and endpoint not a 2 level-factor')
 

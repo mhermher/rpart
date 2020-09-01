@@ -2,9 +2,9 @@
 ##  Get a set of cross-validated predictions
 ##  Most of the setup is identical to the rpart routine
 ##
-xpred.rpart <- function(fit, xval = 10L, cp, return.all = FALSE)
+xpred.rpartwt <- function(fit, xval = 10L, cp, return.all = FALSE)
 {
-    if (!inherits(fit, "rpart")) stop("Invalid fit object")
+    if (!inherits(fit, "rpartwt")) stop("Invalid fit object")
 
     method <- fit$method
     method.int <- pmatch(method, c("anova", "poisson", "class", "user", "exp"))
@@ -20,7 +20,7 @@ xpred.rpart <- function(fit, xval = 10L, cp, return.all = FALSE)
 	if (is.null(m)) {
 	    m <- fit$call[match(c("", "formula", "data", "weights", "subset",
                                   "na.action"), names(fit$call), 0L)]
-	    if (is.null(m$na.action)) m$na.action <- na.rpart
+	    if (is.null(m$na.action)) m$na.action <- na.rpartwt
 	    m[[1]] <- quote(stats::model.frame)
 	    m <- eval.parent(m)
         }
@@ -31,7 +31,7 @@ xpred.rpart <- function(fit, xval = 10L, cp, return.all = FALSE)
 	    Y <- model.extract(m, "response")
             offset <- attr(Terms, "offset")
 	    if (method != "user") {
-		init <- get(paste("rpart", method, sep = "."))(Y, offset, NULL)
+		init <- get(paste("rpartwt", method, sep = "."))(Y, offset, NULL)
 		Y <- init$y
 		numy <- if (is.matrix(Y)) ncol(Y) else 1L
             }

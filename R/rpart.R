@@ -2,7 +2,7 @@
 #  The recursive partitioning function, for R
 #
 rpart <-
-    function(formula, data, weights, subset, na.action = na.rpart, method,
+    function(formula, data, weights, subset, na.action = na.rpartwt, method,
              model = FALSE, x = FALSE, y = TRUE, parms, control, cost, ...)
 {
     Call <- match.call()
@@ -79,12 +79,12 @@ rpart <-
 	    init <- (
             if (missing(parms))
                 get(
-                    paste("rpart", method, sep = "."),
+                    paste("rpartwt", method, sep = "."),
                     envir = environment()
                 )(Y, offset, , wt)
             else
                 get(
-                    paste("rpart", method, sep = "."),
+                    paste("rpartwt", method, sep = "."),
                     envir = environment()
                 )(Y, offset, parms, wt)
         )
@@ -322,6 +322,6 @@ rpart <-
     if (!is.null(attr(m, "na.action"))) ans$na.action <- attr(m, "na.action")
     if (!is.null(xlevels)) attr(ans, "xlevels") <- xlevels
     if (method == "class") attr(ans, "ylevels") <- init$ylevels
-    class(ans) <- "rpart"
+    class(ans) <- "rpartwt"
     ans
 }

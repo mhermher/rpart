@@ -1,10 +1,10 @@
 ## submitted by Anantha Prasad 1/26/98
 
-path.rpart <- function(tree, nodes, pretty = 0, print.it = TRUE)
+path.rpartwt <- function(tree, nodes, pretty = 0, print.it = TRUE)
 {
-    if (!inherits(tree, "rpart"))
+    if (!inherits(tree, "rpartwt"))
         stop("Not a legitimate \"rpart\" object")
-    splits <- labels.rpart(tree, pretty = pretty)
+    splits <- labels.rpartwt(tree, pretty = pretty)
     frame <- tree$frame
     n <- row.names(frame)
     node <- as.numeric(n)
